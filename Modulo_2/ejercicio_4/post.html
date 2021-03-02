@@ -10,8 +10,10 @@
 
 <body>
     <h2>Post</h2>
-    <a href="index.html">Índice</a>
-    <a href="blog.html">Blog</a><hr>
+    <nav>
+        <a href="index.html">Índice</a>
+        <a href="blog.html">Blog</a><hr>
+    </nav>
 
     <section>
         <article>
@@ -45,22 +47,18 @@
 
     <button id="editImage"><img src="icono me gusta.jpeg" width="17">Me gusta</button><br><br>
 
-    <div class="inputBlock">
-        <label for="subjectInput">Asunto</label><br>
-        <input type="text" id="subjectInput" name="subjectInput">
-    </div><br>
+    <form action="">
+        <div class="inputBlock">
+            <label for="subjectInput">Asunto</label><br>
+            <input type="text" id="subjectInput" name="subjectInput">
+        </div><br>
 
-    <div class="inputBlock">
-        <label for="messageInput">Mensaje</label><br>
-        <textarea name="messageInput" id="messageInput" cols="30" rows="10"></textarea>
-    </div><br>
+        <div class="inputBlock">
+            <label for="messageInput">Mensaje</label><br>
+            <textarea name="messageInput" id="messageInput" cols="30" rows="10"></textarea>
+        </div><br>
+    </form> 
 
     <input type="submit" value="Comentar">
-    
-
-
-
-
-
 
 </body>

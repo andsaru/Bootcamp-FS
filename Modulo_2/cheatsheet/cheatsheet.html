@@ -39,11 +39,11 @@
     <!-- <em></em> lo pone en cursiva -->
     <!-- <s></s> Para tachar una frase -->
     <p>
-        Lorem ipsum, <b>dolor sit amet </b> , consectetur adipisicing elit. 
+        Lorem ipsum, <b>dolor sit amet </b> , consectetur adipisicing elit.
         Recusandae, laborum soluta mollitia quidem accusamus
-        <strong>magni asperiores nostrum </strong>inventore aperiam 
-        <em>sunt dicta sit fuga</em> 
-        <s>quam voluptate fugiat</s>  illo similique
+        <strong>magni asperiores nostrum </strong>inventore aperiam
+        <em>sunt dicta sit fuga</em>
+        <s>quam voluptate fugiat</s> illo similique
         deserunt!
     </p>
 
@@ -60,9 +60,9 @@
     <!-- <span></span> para poder darle referencia a posteriori
     con id o class, referenciamos algo concreto del texto -->
     <p>
-        <span class="ingredients">Lorem ipsum dolor sit amet consectetur</span>  adipisicing elit. 
+        <span class="ingredients">Lorem ipsum dolor sit amet consectetur</span> adipisicing elit.
         Soluta rem provident mollitia
-        <span class="ingredients">qui quasi quia corporis ut fuga</span>  quae dolorem.
+        <span class="ingredients">qui quasi quia corporis ut fuga</span> quae dolorem.
     </p>
 
     <!-- <sub></sub> Etiqueta sub de subindice -->
@@ -79,18 +79,19 @@
     <!-- Etiqueta <time></time> para guardar fechas -->
     <p>
         Las clases del bootcamp empieza a las <time datetime="09:30">9.30</time>
-    </p>    
+    </p>
     <p>
         El primer dia fue el <time datetime="2021-02-01">1 de Febrero</time>
     </p>
 
     <!-- Linea en blanco, linea separadora, linea en blanco -->
-    <br><hr><br>
+    <br>
+    <hr><br>
 
     <!-- Contenedores / containers -->
 
     <!-- Barra de navegacion de nuestra pagina-->
-    <!-- nav.mi_nav>a*3{Enlace $} Para ejecutar de manera abreviada etiqueta clase y nombre--> 
+    <!-- nav.mi_nav>a*3{Enlace $} Para ejecutar de manera abreviada etiqueta clase y nombre-->
 
     <nav>
         <a href="">Enlace 1</a>
@@ -127,45 +128,51 @@
 
     <!-- Listas / lists  -->
 
-   <ul> <!-- Desordenada -->
-       <li>Elemento 1</li>
-       <li>Elemento 2</li>
-       <li>Elemento 3</li>
-       <li>Elemento 4</li>
-       <li>Elemento 5</li>
-   </ul>
+    <ul>
+        <!-- Desordenada -->
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+        <li>Elemento 5</li>
+    </ul>
 
-   <ol>
-       <li>Elemento</li>
-       <li>Elemento
-           <ul> <!-- Lista dentro de otra lista -->
-               <li>Elemento</li>
-               <li>Elemento</li>
-           </ul>
-       </li>
-       <li>Elemento</li>
-   </ol>
+    <ol>
+        <li>Elemento</li>
+        <li>Elemento
+            <ul>
+                <!-- Lista dentro de otra lista -->
+                <li>Elemento</li>
+                <li>Elemento</li>
+            </ul>
+        </li>
+        <li>Elemento</li>
+    </ol>
 
-   <ol start="500"> <!-- Empieza en 500 -->
+    <ol start="500">
+        <!-- Empieza en 500 -->
         <li>Elemento</li>
         <li>Elemento</li>
         <li>Elemento</li>
     </ol>
 
-    <br><hr><br>
+    <br>
+    <hr><br>
 
     <!-- Tablas / tables -->
 
     <table>
         <thead>
-            <tr> <!-- representa una fila -->
+            <tr>
+                <!-- representa una fila -->
                 <th>Nombre</th> <!-- la columna -->
                 <th>Email</th>
                 <th>Edad</th>
             </tr>
         </thead>
         <tbody>
-            <tr> <!-- tr es la fila -->
+            <tr>
+                <!-- tr es la fila -->
                 <td>John Doe</td> <!-- td es la celda -->
                 <td>jdoe@gmail.com</td>
                 <td>35</td>
@@ -181,8 +188,10 @@
                 <td>40</td>
             </tr>
         </tbody>
-        <tfoot> <!-- pie de la tabla  -->
-            <tr> <!-- representa una fila -->
+        <tfoot>
+            <!-- pie de la tabla  -->
+            <tr>
+                <!-- representa una fila -->
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>Edad</th>
@@ -190,7 +199,8 @@
         </tfoot>
     </table>
 
-    <br><hr><br>
+    <br>
+    <hr><br>
 
     <!-- Formulario / Forms -->
 
@@ -240,7 +250,7 @@
         <div class="inputBlock">
             <label for="ageInput">Edad</label>
             <input id="ageInput" type="number" name="ageInput" value="40" min="0" max="40">
-            
+
             <label for="birthdayInput">Fecha de nacimiento</label>
             <input type="date" id="birthdayInput" name="birthdayInput">
         </div>
@@ -263,14 +273,16 @@
         <br>
 
         <!-- Agrupar en un conjunto de campos -->
-        <fieldset disabled> <!-- puedo poner disable dentro de este campo en vez de uno a uno 
+        <fieldset disabled>
+            <!-- puedo poner disable dentro de este campo en vez de uno a uno 
                                     y lo inutilizo por completo-->
             <legend>Información de tu pareja</legend>
             <div class="inputBlock">
                 <label for="nameInput2">Nombre (*)</label> <br>
-                <input required type="text" id="nameInput2" name="userName" maxlength="10" placeholder="Introduce tu nombre">
+                <input required type="text" id="nameInput2" name="userName" maxlength="10"
+                    placeholder="Introduce tu nombre">
             </div> <br>
-    
+
             <div class="inputBlock">
                 <label for="lastNameInput2">Apellidos</label><br>
                 <input type="text" id="lastNameInput2" name="lastName" placeholder="Introduce tu apellido">
@@ -281,36 +293,36 @@
             <legend>Estado civil</legend>
             <div>
                 <input type="radio" name="civilState" id="marriedInput" checked>
-                <label for="marriedInput">Casado</label> 
+                <label for="marriedInput">Casado</label>
             </div>
             <div>
                 <input type="radio" name="civilState" id="singleInput">
-                <label for="singleInput">Soltero</label> 
+                <label for="singleInput">Soltero</label>
             </div>
             <div>
                 <input type="radio" name="civilState" id="divorcedInput">
-                <label for="divorcedInput">Divorciado</label> 
+                <label for="divorcedInput">Divorciado</label>
             </div>
             <!-- Con checked ponemos predefinida una opcion -->
         </fieldset>
 
         <br><br>
 
-        <fieldset >
+        <fieldset>
             <legend>Productos</legend>
             <div>
                 <input type="checkbox" name="iphoneProduct" id="iphoneProduct">
-                <label for="iphoneProduct">Iphone</label> 
+                <label for="iphoneProduct">Iphone</label>
             </div>
             <div>
                 <input type="checkbox" name="mcbookProduct" id="mcbookProduct">
-                <label for="mcbookProduct">Mcbook Pro</label> 
+                <label for="mcbookProduct">Mcbook Pro</label>
             </div>
             <div>
                 <input type="checkbox" name="airpodsProduct" id="airpodsProduct">
-                <label for="airpodsProduct">Air Pods</label> 
+                <label for="airpodsProduct">Air Pods</label>
             </div>
-          
+
         </fieldset>
 
         <br>
@@ -351,7 +363,63 @@
     <img src="imagenes/background.jpeg" width="500" alt="Paisaje al atardecer">
     <!-- alt sirve para poner texto alternativo en caso de que la foto no la encuentre -->
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Y2O4RCdwCGM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/OgIRAjnnJzI" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+
+    <!-- página integrada en la nuestra -->
+    <!-- <iframe src="https://marca.com" width="500px" height="400px" frameborder="0"></iframe> -->
+
+    <iframe
+        src="http://www.juntadeandalucia.es/empleo/recursos/material_didactico/especialidades/materialdidactico_tic_linux_basico/manuales/tema1.pdf"
+        width="500" height="500" frameborder="0"></iframe>
+
+    <!-- No es tan común de usar, se suele usar más iframe -->
+    <object data="http://www.juntadeandalucia.es/empleo/recursos/material_didactico/especialidades/materialdidactico_tic_linux_basico/manuales/tema1.pdf" type="application/pdf"></object>
+
+    <br><br>
+    <!-- Citar un tipo de texto / quotes -->
+    <h3>Citas / Quotations</h3>
+
+    <blockquote> <!-- tabula un poco hacia la derecha pero poco más hace -->
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat suscipit ratione, est possimus vel sequi
+        nesciunt quae molestiae illo libero ducimus incidunt, sit nobis. Veniam, dolore! Dignissimos iste odit vel aut
+        repudiandae aliquam ratione optio molestias iusto facilis sapiente enim consectetur esse neque, delectus omnis
+        ipsum assumenda facere eligendi ut? Cum ex quas fugiat, voluptatibus sequi minima tempore. Expedita sunt quaerat
+        nisi repellendus pariatur exercitationem, aut maiores at aliquam voluptatem totam optio omnis ipsam tempora esse
+        accusamus quidem dolorem eaque non recusandae dignissimos aspernatur. Magnam maxime ipsum optio neque cum
+        dolorem? Quos magnam minus iure dolor totam modi beatae architecto in quasi officia? Ab error rem minima,
+        doloremque aut voluptates qui, consectetur tempore, cupiditate iusto iste non. Repellendus quia harum explicabo
+        neque accusamus ipsam libero? Adipisci praesentium eligendi explicabo blanditiis accusamus et in saepe non iste
+        aspernatur perspiciatis odit, sapiente magnam nostrum, doloremque eum sunt fuga dolorem. Doloremque, vero
+        sapiente.
+    </blockquote>
+
+    <!-- quote entre comillas -->
+    <q>Inline quotations</q>
+    <!-- SI pones el ratón encima te sale una etiqueta con información -->
+    <q>Soy programador. <abbr title="Formación profesional">FP</abbr></q>
+    <abbr title="World Wide Web">WWW</abbr>
+
+    
+    
+    <br><br>
+    <button>Click</button>
+    <br><br>
+
+    <!-- Scripting -->
+    <!-- Aquio escribiremos código -->
+    <script>
+        document.write("Escribiendo esto desde JS.")
+    </script>
+    <!-- un posible mensaje de error si java script no esta disponible desde el pc -->
+    <noscript>Error. Tu navegador no soporta JavaScript</noscript>
+    <br><br>
+
+    <!-- esto es separacion en HTML puro, en unicode -->
+    a &nbsp;&nbsp;&nbsp;&nbsp;&#60;b
+    &copy; <!-- simbolito de Copyright -->
+
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 </body>
