@@ -1,0 +1,49 @@
+/* Todos los elementos de la pagina */
+* { 
+    font: 1em/1.3 Arial, Helvetica, sans-serif; 
+}
+
+/* Todos los parrafos de la pagina */
+p { 
+    color: #555; 
+}
+
+/* Todos los párrafos contenidos en #primero */
+#primero p { 
+    color: #336699; 
+}
+
+/* Todos los enlaces de la pagina */
+a { 
+    color: #CC3300;
+}
+
+/* Los elementos "em" contenidos en #primero */
+#primero em { 
+    background: #FFFFCC; padding: .1em; 
+}
+
+/* Todos los elementos "em" de clase "especial"
+en toda la pagina */
+em.especial { 
+    background: #FFCC99; 
+    border: 1px solid #FF9900; 
+    padding: .1em; 
+}
+
+/* Elementos "span" contenidos en .normal */
+.normal span { 
+    font-weight: bold; 
+}
+
+/* Es un ejemplo de como se leeria, de dentro, hacia fuera, de span al div */
+/* div.container p#mainParagraph span */
+
+/* Todas las imagenes dentro de div */
+
+/* div img que no es lo mismo que div>img que implica que tiene que 
+estar justo debajo. si estuvuera dentro de un nav que esta a su vez dentro
+de un div, no serviria div>img. */
+
+/* un parrafo que tenga la clase paragraph */
+/* nav p#par1.paragraph */

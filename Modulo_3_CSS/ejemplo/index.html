@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Referencia al css externo -->
+    <link rel="stylesheet" href="style.css"> <!-- estilo CSS externo -->
+    
+    <!-- Aqui se aplica el css interno, se aplica a todos los div que no esten con una capa inline -->
+    <style>
+        div {
+            background-color: aquamarine;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div style="background-color: red; height: 500px;"></div> <!-- Aqui aplicamos el inline -->
+    <div></div> <!-- no tiene estilo inline, asi que se le aplica el interno -->
+</body>
+</html>
