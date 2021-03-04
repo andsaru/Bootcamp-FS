@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    border: none;
+    padding: 0;
+}
+
+#primero {
+    /* se mantiene el 50% del viewport de alto, mueva lo que mueva lo ventana */
+    height: 50vh;
+    /* background-image: url(images/test.jpeg); */
+
+    /*eje x : left center right // eje y: top center bottom */
+    background-position: center bottom;
+
+    /* Cuando la imagen es mas pequeña que el contenedor */
+    /* la opcion puede ser repeat, para que rellene le hueco o no repeat y pone solo su tamaño */
+    background-repeat: no-repeat;
+
+    /* Cuando la imagen es mas pequeña que el contenedor */
+    /* cubre todo el espacio aunque se vea mal */
+    background-size: contain; /* cover coge todo el div, y contain lo pone en el contenedor pero no lo amplia*/
+    /* background-attachment: fixed; */
+
+    /* margenes */
+    /* margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px; */
+    margin: 20px;
+
+    /* bordes */
+    /* border-bottom: turquoise;
+    border-top: violet;
+    border-width: 5px;
+    border-style: solid; */
+    /* SE suele utilizar asi */
+    border: 5px solid seagreen;
+    border-bottom: 15px solid red;
+    /* border-image: ; poner una imgen como borde por ejemplo.. */
+
+    /* Padding */
+    /* padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 100px;
+    padding-bottom: 100px; */
+    /* para poner todos a la vez */
+    padding: 100px 25px 50px 0px; /* va en el orden de las agujas del reloj arr, dcha, abaj, izq */
+
+    display: none;
+
+}
+
+.empty {
+    height: 2000px;
+    background-color: red;
+}
+
+h1, span {
+    /* color: tomato; */
+    border:5px solid seagreen;
+    
+}
