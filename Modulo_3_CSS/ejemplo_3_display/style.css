@@ -1,3 +1,7 @@
+/* body {
+    margin: 0;
+} */ Para quitar el m argen de la pagina completa
+
 /* Tipos de Display: none, inline, block, inline-block */
 
 /* expresiones regulares, ^ implica que la clase tiene que empezar por box */
@@ -42,13 +46,221 @@
     height: 100px;
 } 
 
-/* centrar horizontalmente (eje x) */
-
-.x-centered{
+.rectangle {
     background-color: brown;
     height: 50px;
     width: 25%;
+}
 
+/* centrar horizontalmente (eje x) */
+.x-centered{
     margin: auto; /* nos lo centra automaticamente, un boton, un contenedor */
 }
 
+/* Posición relativa */
+.pos-relative {
+    position: relative;
+    left: 100px;
+    top: -50px;
+    z-index: -1; /* Si por ej hay conflicto, en este caso con el titulo, es para mover las capas y ponerlas por detras, delante... */
+}
+
+/* Posición absoluta, ejemplo padre / hijo */
+.pos-absolute-parent{
+    height: 300px;
+    border: 15px solid tomato;
+
+    position: relative;
+    /* para que el hijo se pueda mover de manera absoluta dentro del padre solo tenemos que
+    poner position relative en el padre; */
+}
+
+.pos-absolute-child {
+    height: 50px;
+    width: 50px;
+    background-color: #333;
+
+    /* juega con la posicion absoluta en el documento entero, al poner position relative
+     al padre, va a ser absoluta dentro del padre*/
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    margin-left: -25px;
+    margin-top: -25px;
+}
+
+/* Posición fija, el boton de la derecha */
+.pos-fixed {
+    background-color: #333;
+    padding: 20px 30px; 
+
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1; /* El botón queda encima de los demás */
+}
+
+.pos-fixed a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Posición sticky */
+.pos-sticky { /* Se queda fija, cuando el scroll llega, y luego vuelve a su sitio */
+    background-color: steelblue;
+    padding: 15px 25px;
+
+    position: sticky;
+    top: 0;
+}
+
+.pos-sticky a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Posicionamiento flotante:divs dentro de otros divs  */
+
+.pos-float-parent {
+    border: 5px solid royalblue;
+    color: white;
+    font-size: 20px;
+
+    overflow: hidden;
+}
+
+.pos-float-child-1 {
+    background-color: brown;
+    height: 100px;
+    width: 33.3%;
+
+    float: left;  /* flota a la derecha dentro del contenedor padre  */
+    opacity: 0.5; /* Para ver como child 3 esta por detras de child 1 y 2 */
+}
+
+.pos-float-child-2 {
+    background-color: darkblue;
+    height: 100px;
+    width: 33.3%; 
+
+    float: right; 
+}
+
+.pos-float-child-3 {
+    background-color: darkorange;
+    height: 50px;
+    width: 100%; /* Cae detras de los float 1 y 2, porque 
+                no tiene clear, ni es float */
+
+}
+
+.pos-float-child-4 {
+    background-color: yellowgreen;
+    height: 50px;
+    width: 100%; 
+
+    clear: both; /* respeta el espacio, el padre lo respeta y 
+                entonces como es el ultimo respeta al resto */
+} /* Todo lo que ponga detras de aqui dice, float 4 es normal 
+al hacer el clear, pues sigue normal */
+
+
+/* Overflow */
+.pos-float-over {
+    border: 5px solid royalblue;
+    color: white;
+    font-size: 20px;
+
+    /* Para gestionar el desbordamiento de contenido o para que el padre 
+    no colapse si todos los hijos son flotantes (ya que no tendría un 
+    tamaño virtual al estar flotando), podemos utilizar overflow  con
+    hidden y obligamos al padre a abarcar a los hijos*/
+    overflow: hidden;
+}
+
+.pos-float-child-1 {
+    background-color: brown;
+    height: 100px;
+    width: 33.3%;
+
+    float: left;  
+    opacity: 0.5; 
+}
+
+.pos-float-child-2 {
+    background-color: darkblue;
+    height: 100px;
+    width: 33.3%; 
+
+    float: right; 
+}
+
+.pos-float-child-3 {
+    background-color: darkorange;
+    height: 50px;
+    width: 100%; 
+}
+
+.pos-float-child-4 {
+    background-color: yellowgreen;
+    height: 50px;
+    width: 100%; 
+
+    clear: both;  
+} 
+.pos-float-child-5 {
+    background-color: red;
+    height: 50px;
+    width: 33.3%; 
+
+    float:right;
+} 
+
+.pos-float-child-6 {
+    background-color: yellow;
+    height: 50px;
+    width: 100%; 
+} 
+
+/* Overflow - Gestión del desbordamiento del contenido */
+[class^="overflow-parent"]{
+    width: 200px;
+    height: 100px;
+    border: 3px dashed black;
+    margin-bottom: 150px;
+}
+
+.overflow-parent-1 {
+    overflow: hidden; /* oculta el texto que quede fuera, el desbordamiento */
+}
+
+.overflow-parent-2 {
+    overflow: visible; /* se ve, aunque desborde */
+}
+
+.overflow-parent-3 {
+    overflow: scroll;
+}
+
+/* Tamano de cajas (box-sizing) */
+
+.boxx-sizing-parent {
+    width: 200px;
+    height: 200px;
+    border: 10px solid goldenrod;
+}
+
+.boxx-sizing-child {
+    width: 100%;
+    height: 50px;
+    background-color: gray;
+    border: 10px solid darkolivegreen;
+
+    box-sizing: content-box; /* Valor por defecto. Toma en cuenta lo gris hasta el final del grosor del 
+                                borde de padre, por eso se sale */
+}
+
+.border-box {
+    margin-top: 10px;
+    box-sizing: border-box; /* toma en cuenta su contenido y su borde, pero esta dentro */
+}

@@ -41,7 +41,80 @@
     </div>
 
     <h2>Centrar horizontalmente (eje x)</h2>
-    <div class="x-centered"></div>
+    <div class="x-centered rectangle"></div> 
+    <!-- puedo darle dos clases, con una la centro y con otra hago la caja
+        Asi puedo utilizar el style de rectangle por ej abajo tambien -->
+    <h2>Posición relativa</h2>
+    <div class="pos-relative rectangle"></div>
+
+    <h2>Posición absoluta</h2>
+    <div class="pos-absolute-parent">
+        <div class="pos-absolute-child"></div>
+    </div>
+
+    <h2>Posición fijo / fixed</h2>
+    <div class="pos-fixed">
+        <a href="#">Botón fijo</a>
+    </div>
+    
+    <h2>Posición sticky</h2>
+    <div class="pos-sticky">
+        <a href="#">Inicio</a>
+        <a href="#">Contacto</a>
+    </div>
+
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima suscipit et quibusdam quia deleniti animi quis odio natus, laboriosam nulla? Impedit dolores aliquam voluptate consequuntur sapiente reprehenderit voluptas. Odio pariatur laudantium nesciunt vero at, vitae adipisci? Qui, quisquam repellat quas ipsum labore quis ipsa reiciendis tempore. Voluptas porro voluptates facilis.</p>
+
+    <h2> Posicionamiento flotante: divs dentro de otros divs</h2>  
+    <div class="pos-float-parent">
+        <!-- .pos-float-child-$*4 -->
+        <div class="pos-float-child-1">Caja 1 (float left)</div>
+        <div class="pos-float-child-2">Caja 2 (float right)</div>
+        <div class="pos-float-child-3">Caja 3 (sin float)</div>
+        <div class="pos-float-child-4">Caja 4 (hace clean)</div>
+        
+    </div>
+
+    <h2> Overflow</h2>  
+    <div class="pos-float-over">
+        <!-- .pos-float-child-$*4 -->
+        <div class="pos-float-child-1">Caja 1 (float left)</div>
+        <div class="pos-float-child-2">Caja 2 (float right)</div>
+        <div class="pos-float-child-3">Caja 3 (sin float)</div>
+        <div class="pos-float-child-4">Caja 4 (hace clean)</div>
+        <div class="pos-float-child-5">Caja 5 (float right)</div>
+        
+    </div>
+    <div class="pos-float-child-6">Caja 6 (normal)</div>
+
+    <h2>Overflow - Gestión del desbordamiento del contenido</h2>
+     <!-- .overflow-parent-$*3>p>Lorem -->
+     <h3>overflow: hidden</h3>
+     <div class="overflow-parent-1">
+         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam numquam distinctio recusandae eius officiis eos voluptate minus optio, odit laboriosam iure dicta quas dolores aut. Et ex quisquam fugit iste.</p>
+     </div>
+
+     <h3>overflow: visible</h3>
+     <div class="overflow-parent-2">
+         <p>Maxime, eos nostrum! Alias cum modi, minus iste nam qui. Repudiandae quos commodi dicta nostrum nam molestias, corporis quisquam doloremque libero voluptate aut cumque incidunt velit recusandae, porro amet fuga.</p>
+     </div>
+     
+     <h3>overflow: scroll </h3>
+     <div class="overflow-parent-3">
+         <p>Neque provident quis minima labore officia vero blanditiis doloribus repellat, voluptas quod aperiam, ut nihil unde velit ratione placeat reiciendis ab recusandae dicta quam! Iure cupiditate dolorum doloribus reprehenderit. Maiores.</p>
+     </div>
+
+     <h2>Tamano de cajas (box-sizing)</h2>
+     <div class="boxx-sizing-parent">
+         <div class="boxx-sizing-child"></div>
+         <div class="boxx-sizing-child border-box"></div>
+     </div>
+
+
+
+
+
+    <div style="height: 1000px;"> </div>
     
 
 </body>
