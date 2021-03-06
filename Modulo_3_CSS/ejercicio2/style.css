@@ -1,4 +1,24 @@
 .box{
-    background-color: rgb(209, 205, 205);
-    border:1px solid rgb(202, 198, 198);
+    border: 1px solid rgba(202, 198, 198, 0.904);
+    font-size: 19px;
+    background-color: rgb(233, 229, 229);
+    height: 40px;
+    display: flex; /*Centrar texto en la caja*/
+    align-items: center;
+
+    overflow: hidden; 
+}
+
+.box-child-1 {
+    width: 50%;
+    float: left;
+    margin-left: 2%; /*margen a la izquierda*/
+    
+    
+}
+
+.box-child-2 {
+    width: 50%; 
+    float: right;
+    margin-right: 2%; /*margen a la derecha*/
 }
