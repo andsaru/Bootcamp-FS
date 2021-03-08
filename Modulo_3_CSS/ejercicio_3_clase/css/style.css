@@ -1,0 +1,22 @@
+ul {
+    padding: 0px;
+    width: 50%;
+}
+
+ul>li {
+    color: #333;
+    background-color: #ddd;
+    padding: 4px;
+
+    list-style-position: inside; /*me mete el punto dentro del propio elemento
+    si hubiera utilizado outside, lo dejaria fuera de la caja del li*/
+    list-style-image: url(../imagenes/fast-forward.png);
+    cursor: pointer;
+    border: 1px solid rgb(180, 176, 176);
+}
+
+ul>li:hover { /* Cuando el raton se pone por encima del elemento cambia el color*/
+    color: red;
+    list-style-image: url(../imagenes/fast-forward1.png);
+}
+

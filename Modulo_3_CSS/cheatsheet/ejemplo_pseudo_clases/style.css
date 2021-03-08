@@ -1,0 +1,10 @@
+/* Las pseudo clases son estados y propiedades que pueden 
+tener los elementos, hover, active... */
+
+/* No existen de forma individual en HTML, son los pseudo
+elementos, ::first-letter, ::first-line, ::first-line... */
+
+p::first-letter { 
+    font-size: 3em;
+    color: red;
+}
