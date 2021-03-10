@@ -1,0 +1,98 @@
+/* Flexbox */
+.flex-parent {
+    display: flex;
+    
+    /* flex-direction: row; *//* row (default)/ columna */
+    /* flex-wrap: wrap; */ /* nowrap (default) /elegimos si queremos que se apilen con wrap, con nowrap se estrechan sin apilar*/
+    flex-flow: row nowrap; /*utiliza las dos anteriores*/
+
+    /* eje principal / horizontal */
+    justify-content: center;/*lo centra en el display*/
+    justify-content: flex-start; /*al princpio, por defecto*/
+    justify-content: flex-end; /*al final*/
+    
+    justify-content: space-between; /*espacio en medio de los elementos*/
+    justify-content: space-evenly; /*genera más espacio dentro que fuera*/
+    justify-content: space-around; /*darle espacio a los elementos*/
+
+    /* eje secundario / vertical (le quitamos la altura al hijo, y se lo ponemos al padre para verlo mejor) */
+    align-items: center;
+    align-items: flex-start;
+    align-items: flex-end;
+    align-items: stretch; /*por defecto es stretch*/
+    /* align-items: baseline; */
+
+    border: 2px solid #333;
+    height: 250px;
+
+
+}
+
+[class^="flex-child"] {
+    width: 250px;
+    
+
+    display: flex;
+    justify-content: center; /*centra el elemento de la caja(texto) de la direccion fila, horizontalmente*/
+    align-items: center;  /*centra el elemento verticalmente en la caja*/
+}
+
+.flex-parent > div:nth-child(even) { /*con la opción nth- selecciona el enesimo, cualquier número
+                                        y con even, seleccionamos los pares*/
+    background-color: #333;
+    color: #ddd;
+}
+.flex-parent > div:nth-child(odd) {/*con la opción nth- selecciona el enesimo, cualquier número
+                                    y con even, seleccionamos los impares*/
+    background-color: #ddd;
+    color: #333;
+}
+
+/* .flex-child-1 { 
+    height: 200px; /* alinea el texto independientemente el tamaño de la caja */
+                    /*ejemplo relacionado con el align-items: baseline del padre;*/
+/* } */
+
+
+/*flex-srink y flex-grow , factor de decrecimiento/crecimiento, segun sea 1, 2 o 3 es la velocidad a la que crecen
+o decrecen*/
+.flex-child-1 {
+/*  flex-grow: 0;
+    flex-shrink: 2;
+    flex-basis: 250px; */
+    flex: 0 2 auto; /*poner todo a la vez, grow-shrink-basis*/
+}
+
+.flex-child-2 {
+    /* flex-grow: 1; */ /*toma todo el tamaño disponible sino ponemos grow a las otras cajas*/
+    /* flex-shrink: 3; */
+    /* flex-basis: 250px; */ /*tamaño base, con auto coge el tamaño que hayamos declarado antes*/
+    flex: 1 3 auto;
+    align-self: center; /*sobreescribe lo que diga el padre, para el de forma individual
+                        acepta stretch, center, flex-start y flex-end*/
+}
+
+.flex-child-3 {
+/*     flex-grow: 2;
+    flex-shrink: 1;
+    flex-basis: 250px; */
+    flex: 2 1 250px;
+}
+
+/*ejemplo flexbox en ejemplo posicion absoluta*/
+.pos-absolute-parent{
+    height: 300px;
+    border: 15px solid tomato;
+
+    display: flex;
+    justify-content: center;
+    align-items:center
+
+
+}
+
+.pos-absolute-child {
+    height: 50px;
+    width: 50px;
+    background-color: #333;
+}
