@@ -1,0 +1,81 @@
+/* CSS Grid por áreas */
+
+.grid-parent {
+    display: grid;
+    gap: 10px;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr 1fr; /*para dar tamaño a las filas*/
+
+    /*dibujamos el área*/
+    grid-template-areas: "nav nav"
+                         "content1 content2"
+                         "content1 content3"
+                         "footer footer";
+                        /*si queremos dejar vacio una caja, ponemos un punto*/
+}
+
+.grid-parent > .grid-child-1 {
+    grid-area: nav;
+    background-color: aqua;
+}
+
+.grid-parent > .grid-child-2 {
+    grid-area: content1;
+    background-color: violet;
+}
+
+.grid-parent > .grid-child-3 {
+    grid-area: content2;
+    background-color: blue;
+}
+
+.grid-parent > .grid-child-4 {
+    grid-area: content3;
+    background-color: cornflowerblue;
+}
+
+.grid-parent > .grid-child-5 {
+    grid-area: footer;
+    background-color: lightyellow;
+}
+
+/* CSS Grid por líneas */
+.grid-parent-2 {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 2fr 1fr 1fr;;
+    gap: 10px;
+}
+
+.grid-parent-2 > .grid-child-1 {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    background-color: aqua;
+}
+
+.grid-parent-2 > .grid-child-2 {
+    grid-column: 1 ; 
+    grid-row: 2 / 4; 
+    background-color: violet;
+}
+
+.grid-parent-2 > .grid-child-3 {
+    grid-column: 2 ; 
+    grid-row: 2;
+    background-color: blue; 
+}
+
+.grid-parent-2 > .grid-child-4 {
+    grid-column: 2 ; 
+    grid-row: 3;
+    background-color: cornflowerblue; 
+}
+
+.grid-parent-2 > .grid-child-5 {
+    grid-column: 1 / 3; 
+    grid-row: 4; 
+    background-color: lightyellow;
+}
+

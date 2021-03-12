@@ -24,7 +24,8 @@ div.card {
 
 /* Elemento flex que cogerá todo el espacio disponible  */
 .content {
-    flex-grow: 1;
+    flex-grow: 1; /*por defecto los elemento son flex 0, al darle valor 1, ocupa el 
+                    espacio y tira el resto hacia abajo*/
     width: 100%;
 
     display: flex;
