@@ -35,3 +35,65 @@
     box-shadow: 5px 5px 15px black; 
                 /*para dar sombramueve horizontal, mueve vertical, sombreado y color*/
 }
+
+/* Transformaciones */
+
+.transform {
+    height: 100px;
+    width: 100px;
+    background-color: black;
+
+    transform: translate(300px, -20px) rotate(45deg) scale(1.5) skewX(25deg);
+    /*translate (ejeX, ejeY(siempre va a la inversa por eso el negativo))*/
+
+}
+
+/* Transiciones */
+.transitions {
+    height: 100px;
+    width: 100px;
+    margin-left: 100px;
+    background-color: darkcyan;
+    color: white;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    /* transition-property: transform; */ /*las propiedades que se ven afectadas, un box shadow, opacity...*/
+    /* transition-duration: 0.5s; */ /*lo que tarda en realizar el efecto*/
+    /* transition-delay: 1s */; /*lo que tarda en realizar la accion desde que pongo el ratón encima*/
+    /* transition-timing-function: ease-in-out; */ /*linear, easy-in, easy-out....*/
+
+    transition: all 1s ease-in-out; /*para poner todo en una línea*/
+}
+
+.transitions:hover {
+    transform: scale(1.3) rotate(3deg);
+}
+
+/* Animaciones */
+.text-animation {
+    animation-name: slidein; /*el nombre tiene que estar relacionado con el @ keyframes*/
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    /* animation: duracion repeticiones; *//*para ponerlo todo junto*/
+}
+
+@keyframes slidein {
+    from{
+        /* margin-left: 100%; *//*empieza desde aquí*/
+        color: red;
+    }
+
+    50% { /*a la mitad coge el color rojo*/
+        /* margin-left: 0%; */ /*rebota*/
+        color: white;
+    }
+
+    to {
+        /* margin-left: 100%; */ /*y vuelve*/
+        color: red;
+    }
+}
