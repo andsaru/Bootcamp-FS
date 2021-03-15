@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'Inter';
+    src: url(../fonts/Inter/Inter-VariableFont_slnt\,wght.ttf);
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url(../fonts/Roboto/Roboto-Black.ttf);
+    font-style: normal;
+    font-weight: normal;
+}
+
+* {
+    font-family: 'Inter', 'Roboto', Helvetica, Arial;
+    background-color:  #f4f5f7;
+    margin: 0;
+}
+
+.container {
+/*     
+    border: 1px solid #d9d9d9;
+    border-radius: 10px;
+    background-color: f4f5f7;
+    margin: 0%;
+ */ 
+    background: white;
+    height: 100vh;  
+    display: flex;     
+    align-items: center;
+    justify-content: center;
+
+
+
+
+}
+
+.img-login img {
+    height: 50vh;
+    /* object-fit: contain; */
+
+
+}
+
+.main-login {
+    /* width: 350px; */
+    height: 50vh;
+    margin: 20px;
+    background: white;
+}
+
