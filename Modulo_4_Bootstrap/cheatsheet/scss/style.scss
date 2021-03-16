@@ -1,0 +1,19 @@
+div {
+    background-color: red;
+
+    a {
+        color: white;
+    }
+
+    button {
+        height: 100%;
+    }
+
+    $columns:5;
+
+    @for $i from 1 to $columns {
+        .columns-#{si} {
+            width: (100% / $i);
+        }
+    }
+}
