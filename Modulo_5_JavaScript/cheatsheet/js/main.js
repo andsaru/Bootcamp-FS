@@ -5,7 +5,7 @@ function saludo () {
     console.log("Has hecho click");
 }
 /*con document. selecciono todo el documento anterior*/
-document.getElementsByTagName("a").item(2).addEventListener("click", saludo);
+// document.getElementsByTagName("a").item(2).addEventListener("click", saludo);
 
 
 //--------------------- Depuración / logging -----------------
@@ -158,3 +158,102 @@ person.jump(); //Llamamos a la función jump, ya tiene su consol.log
 
 console.log(typeof {}, typeof [], typeof ""); //aunque los corchetes representen arrays, recordad que tambien son objetos
 
+// This
+const person2 = {
+    name: "Thomas",
+    talk() {
+        console.log(this); //Se imprime el objeto, this hace referencia a person2
+        console.log(`Me llamo ${this.name}`); //es lo mismo que poner console.log(person2.name)
+    }
+}
+
+const person3 = {
+    name: "Sarah",
+    talk() {
+        console.log(this); //Se imprime el objeto
+        console.log(`Me llamo ${this.name}`); //es lo mismo que poner console.log(person2.name)
+    }
+}
+
+person2.talk();
+person3.talk();
+
+console.clear();
+
+//-------------------------- Arrays ------------------------------
+let selectedColors = ["red", "blue"]; // Array de strings
+console.log(selectedColors, selectedColors.length, typeof selectedColors);
+
+selectedColors[2] = "green";
+
+console.log(selectedColors, selectedColors.length);
+
+selectedColors.push("violet", "white");// .push añade un elemento al array
+console.log(selectedColors, selectedColors.length);
+
+selectedColors.pop(); //Quita el último elemento
+console.log(selectedColors, selectedColors.length);
+
+selectedColors.unshift("white"); // Añade un elemento al principio
+console.log(selectedColors, selectedColors.length);
+
+selectedColors.shift("white"); // Elimina el elemento del principio
+console.log(selectedColors, selectedColors.length);
+
+selectedColors.sort(); // Ordena array alfabeticamente
+console.log(selectedColors, selectedColors.length);
+
+console.log(selectedColors.indexOf("red")); // me busca el elemento que yo le diga y me devuelve el índice de ese elemento
+console.log(selectedColors[selectedColors.indexOf("red") + 1]); // me meustra Violet, a partir de red
+
+console.log("El rojo está en el índice", selectedColors.indexOf("red"));
+
+console.log(selectedColors.slice(1, 3)); //elimina el elemento de la posición 1 y 3
+console.log(selectedColors);
+
+selectedColors.splice(1, 1); //Para eliminar un elemento (el de la posición 1, 1)
+console.log("Los elementos borrados son: ", selectedColors.splice(1, 2)); //splice elimina los elementos del 1 al 3, elegimos lo que queremos que se borre
+console.log("El array se ha quedado así: ", selectedColors);
+
+console.clear();
+
+// Ejercicio ejemplo
+/*Craer un objeto 'niño que tenga las propiedades nombre, altura, género y 
+ amigos. Amigos estará inicialmente vacío y añadiremos posteriormente
+ 3 elementos con los nombres. Después, añadiremos uno extra al inicio'*/
+
+ const kid = {
+     name: "Marc",
+     height: 1.74,
+     gender: "male",
+     friends: [],
+     loseFriend() {
+        this.friends.pop();
+     }
+ }
+
+ console.log(kid);
+ kid.friends.push("Mary", "Peter", "Thomas") // añado posteriormente a los 3 amigos
+ console.log(kid);
+ kid.friends.unshift("Tony"); // añado Tony al principio
+ console.log(kid);
+
+kid.loseFriend(); //Llamamos a la función
+console.log(kid);
+
+console.clear();
+//-------------------------- Condicionales ------------------------------
+const randomNumber = 9;
+const guessedNumber = "5";
+
+if (typeof randomNumber !== typeof guessedNumber) { // if (randomNumber == guessedNumber && randomNumber !== guessedNumber) 
+    console.log("Hey, tienes que introducir el mismo tipo.");
+}
+
+if (randomNumber === guessedNumber) {
+    console.log("Has acertado el número");
+} else if (randomNumber > guessedNumber) {
+    console.log("El número secreto es mayor");
+} else {
+    console.log("El número secreto es menor");
+}
