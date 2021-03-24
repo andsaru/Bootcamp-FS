@@ -473,7 +473,69 @@ console.log("NO entra en bucle infinito");
 //For each se aplica siempre que sea un array
 console.log(numbersArray);
 numbersArray.forEach(function (value, index){
-    console.log(`Índice ${index}: ${value}`);
+    console.log(`Índice ${index}: ${value}`); // Equivale a lo de abajo
 });
 
+console.log(`Índice ${0}: ${1}`);
+console.log(`Índice ${1}: ${2}`);
+console.log(`Índice ${2}: ${5}`);
+console.log(`Índice ${3}: ${15}`);
+console.log(`Índice ${4}: ${51}`); 
 
+// Otra forma
+function myFunction(value, index) {
+    console.log(`Índice ${index}: ${value}`);
+}
+
+numbersArray.forEach(myFunction);
+
+// Equivalente al forEach
+myFunction(numbersArray[0], 0, numbersArray);
+myFunction(numbersArray[1], 1, numbersArray);
+myFunction(numbersArray[2], 2, numbersArray);
+myFunction(numbersArray[3], 3, numbersArray);
+myFunction(numbersArray[4], 4, numbersArray);
+
+let otherArray = [];
+
+console.log(otherArray); // Cuidado con el navegador
+numbersArray.forEach(value => otherArray.push(value));
+console.log(otherArray);
+
+
+//Ejemplo con el de side => side * 4 con el tipo flecha
+
+numbersArray.forEach((value, index) => console.log(`Índice ${index}: ${value}`));
+
+//-------------------------- For of ------------------------------
+for (let item of numbersArray) { //Después de of, va cualquier cosa iterable, string, array..
+    console.log(item);
+}
+
+
+//-------------------------- Continue ------------------------------
+for (let i = 0; i < 5; i++) {
+    if (i === 3 || i === 2) { // Salta el 2 y el 3
+        continue; // salta a la siguiente iteración
+    }
+    console.log("Using continue", i);
+}
+
+//-------------------------- Break ------------------------------
+let i = 0;
+let k = 0;
+
+mainLoop: while (true) {
+    console.log("Outer loop", i);
+    i++;
+    k = 1;
+    while (true) {
+        console.log("Inner loop", k);
+        k++;
+        if (i === 5 && k === 5) {
+            break mainLoop;
+        }else if (k === 5){
+            break ;
+        }
+    }
+}
