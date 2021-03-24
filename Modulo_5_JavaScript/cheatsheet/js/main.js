@@ -130,8 +130,13 @@ const person = { //Una vez que abrimos las llaves, lo que hay dentro es un objet
     }, // Pre-ES6, como se llamaban antes a las funciones
     jump() { //nombre de la funcion, () argumento si las tuviera y corchetes 
         console.log("Hey, estoy saltando."); //La llamamos abajo
-    } // ES6
+    }, // ES6
+    presentarse(){
+        console.log(`Me llamo ${this.name} tengo ${this.age} y ${this.blonde ? 'soy rubio' : 'soy moreno'}.`)
+    },
 }
+
+person.presentarse();
 
 console.log(typeof person, person);
 console.log(person.name);
@@ -257,3 +262,218 @@ if (randomNumber === guessedNumber) {
 } else {
     console.log("El número secreto es menor");
 }
+
+// Ternary Operator
+let variable = 12 < 10 ? "El primero es menor" : "el primero es mayor"; // Podemos poner el condicional en la misma línea
+console.log(variable);
+
+//Ejemplo como el de objects añadiendo la función presentarse para ver el Ternary operator
+/* const person = { 
+    name: "John",
+    age: 30,
+    blonde: false, //en funcion cambie esto a true o false, cuando lo ejecute cambiara a rubio o moreno
+    walk: function () {
+        console.log("Hey, estoy saltando.");
+    }, 
+    jump() {  
+        console.log("Hey, estoy saltando."); 
+    },  
+    presentarse(){
+        console.log(`Me llamo ${this.name} tengo ${this.age} y ${this.blonde ? 'soy rubio' : 'soy moreno'}.`)
+    },
+} 
+
+person.presentarse(); */
+
+// Switch
+
+let option = 2;
+switch (option) {
+    case 1:
+        //Bloque de código para valor 1
+        console.log("Option vale 1");
+        break;
+    case 2:
+        //Bloque de código para valor 2
+        console.log("Option vale 2");
+        break;
+    case 3:
+        //Bloque de código para valor 3
+        console.log("Option vale 3");
+        break;
+    default: // "De otro modo" de PSeInt
+        console.log("otra opción");
+        break;
+}
+
+console.clear();
+//-------------------------- Funciones/Functions ------------------------------
+// --- Funciones Nombradas
+
+// Esta es una forma 
+/* function greet (name, lastName) {
+    console.log(`Hola, ${name} ${lastName}. ¿Qué tal?`);
+}
+
+greet();
+greet("Marcos", "Aurelio"); */
+
+function greet (name, lastName) {
+    return `Hola, ${name} ${lastName}. ¿Qué tal?`; // El RETURN, hace de break, recordar, rompe y para la función
+}
+console.log(greet("Marcos", "Aurelio"));
+
+// Que devuelva el cuadrado de un número que recibe por parámetro
+function square (number) {
+    return number*number;
+}
+
+console.log(square(5));
+
+// Otra forma
+function cuadrado (num) {
+    let cuadrado = num * num; // Siempre declaramos con const o let cuadrado
+    return cuadrado;
+}
+console.log(cuadrado(5));
+
+// --- Funciones Anonimas
+
+let numbersArray = [5, 51, 1, 15, 2];
+console.log(numbersArray);
+numbersArray.sort(); // Me lo ordena según ASCII
+console.log(numbersArray);
+
+// Function used to determine the order of the elements. It is expected
+// o return a negative value if first argument is less than second 
+// argument, zero if they're equal and a positive value otherwise. 
+// If omitted, the elements are sorted in ascending, ASCII character order.
+
+function ordersNumbers(a,b) {
+    if (a < b) {
+        return -1;
+    } else if (a === b) {
+        return 0;
+    } else { 
+        return 1;
+    }
+}
+
+// numbersArray.sort(ordersNumbers)
+
+/* function ordersNumbersV2(a,b) { // es la misma que la de arriba, reducida 
+                                    que abajo la convierto en funcion anonima
+    return a - b;
+} */
+
+
+numbersArray.sort(function (a, b) {return a - b}); // Ejemplo de Funcion de anonima
+
+console.log(typeof ordersNumbers, typeof function (a,b) {return a - b});
+
+console.log(numbersArray);
+
+// Otro ejemplo de ordenar con sort
+const person6 = {
+    name: "",
+    age:50,
+}
+const person4 = {
+    name: "",
+    age:55,
+}
+const person5 = {
+    name: "",
+    age:40,
+}
+
+let personsArray = [person6, person4, person5]
+
+numbersArray.sort(function (person1, person2) {
+    if (person1.age < person2.age) {
+        return -1;
+    } else if (person1.age === person2.age) {
+        return 0;
+    } else { 
+        return 1;
+    }
+});
+
+console.log(personsArray);
+
+personsArray.sort(function (a,b) {return a.age-b.age}); // Función anonima de la anterior
+
+// --- Funciones de flecha // Arrow Functions
+let perimeterOfSquare = function (side) { //  Función anónima normal a transformar
+    return side * 4;
+}
+ perimeterOfSquare = function (side) {return side *4;} // (opcional) Una única línea
+ perimeterOfSquare = (side) => {return side * 4;}// Sustituyo function por la flecha después de las llaves
+ perimeterOfSquare = (side) => side * 4; // Si solo quiero devolver algo, quito llaves y return.
+ perimeterOfSquare = side => side * 4; // Si solo tiene 1 param, puedo quitar paréntesis.
+
+ console.log(perimeterOfSquare(5));
+
+/* let perimeterOfSquare = side => side*4; */ // en el primer lado pongo todos los argumentos de esa función
+                                            // y a la derecha de la flecha lo que nos devuelve
+
+// console.log(typeof function () {}); 
+// console.log(typeof (() => {})); 
+
+// Cómo transformar func anónima en func de flecha ejemplo ejercicio anterior 
+
+numbersArray.sort(function (a,b) {return a - b}); //de anonima
+numbersArray.sort ((a, b) => a - b);              // a flecha
+console.log(numbersArray);
+
+//Función de flecha que me devuelva el cuadrado de un número
+
+let squareV2 = number => number * number;
+console.log(squareV2(5));
+
+//-------------------------- For ------------------------------
+for (let i = 0; i <= 10; i++) {
+    console.log(`Indice: ${i}`);
+}
+
+// Definir y rellenar un array con el índice i
+// Con .push, lo más cómodo, Recomended
+const ArrayX = [];
+
+for (let i = 0; i <= 10; i++) {
+    ArrayX.push(i);
+}
+
+console.log(ArrayX);
+
+// Como lo haciamos en PSeInt
+let miArray = [];
+
+for (let i = 0; i <= 10; i++) {
+    miArray[i] = i;
+    console.log(`Índice: ${i} - ${miArray}`);
+}
+
+console.log(miArray);
+
+//-------------------------- While ------------------------------
+let contador = 0;
+while (contador <= 10) {
+    console.log(contador);
+    contador++;
+}
+
+ while (true) { // con true va hasta el infinito
+    break;      //para romperlo
+}
+
+console.log("NO entra en bucle infinito");
+
+//-------------------------- For each ------------------------------
+//For each se aplica siempre que sea un array
+console.log(numbersArray);
+numbersArray.forEach(function (value, index){
+    console.log(`Índice ${index}: ${value}`);
+});
+
+
