@@ -134,6 +134,61 @@ parent2.appendChild(newTable);
 
 // --- Fin ejercicio ---
 
+// --- Eventos / Events ---
+
+const colorButton = document.getElementsByTagName("button")[0]; // Tenemos que ponerle la posición [0], 
+                                                                //porque sino nos devuelve un html collection
+//console.log(colorButton);
+colorButton.addEventListener("click", function (event) {
+    //console.log(event); // cuando pulso el boton me da información en la consola
+    console.log(event.target); // me dice quien lo ha hecho
+    //document.body.style.backgroundColor = "green"; // Cuando lo pulse cambia a verde
+    //document.body.classList.toggle("bg-red"); // No funciona pero deberia cambiar a rojo el fondo y quitarlo cada vez que pulse (evento toggle)
+    //console.log(event.target.tagName); // me dice su etiqueta
+
+    // Para controlar eventos por ejemplo
+    if (event.ctrlKey) { // pulsando ctrl + clic para cambiar el color
+        document.body.style.backgroundColor = "green";
+    }
+    console.log(`X: ${event.clientX} | Y: ${event.clientY}`); // muestra por consola por donde se mueve el ratón
+    console.log(`Alt: ${event.altKey}. Shift: ${event.shiftKey}. Ctrl: ${event.ctrlKey}`);
+});
+
+const emailInput = document.querySelector("#emailInput");
+
+emailInput.addEventListener("focus", inputListener); // cuando pulso dentro del input, evento focus se activa
+emailInput.addEventListener("blur", inputListener); // cuando te sales del Input, el evento es blur
+
+function inputListener (e) { // Con esta funcion, dentro del input se pone rojo(focus), y cuando pulso fuera(blur) se eleimina
+    
+    console.log("Tipo de evento: ", e.type);
+    if (e.type === "focus") {
+        e.target.classList.add("bg-red");
+    } else if(e.type === "blur") {
+        e.target.classList.remove("bg-red");
+    }
+}
+
+// función changeTitle (de flecha)
+const changeTitle = e => {
+    document.querySelectorAll("h1")[2].textContent = emailInput.value; // propiedad value importante
+}
+
+emailInput.addEventListener("keydown", inputListener);
+emailInput.addEventListener("keyup", changeTitle);
+
+const container = document.getElementById("container");
+
+container.addEventListener("mouseover", inputListener);
+container.addEventListener("mouseout", inputListener);
+
+// función para ver la coordenada del raton en todo el cuerpo
+function coords(e) {
+    document.querySelectorAll("h1")[3].textContent = `X: ${e.clientX} | Y: ${e.clientY}`;
+}
+
+document.body.addEventListener("mousemove", coords);
+
 
 
 
