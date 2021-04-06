@@ -309,12 +309,38 @@ console.log("****************Ejercicio 18****************");
 /*repeatString("No haré memes sobre el profesor. ", 2);
   output: ”No haré memes sobre el profesor. No haré memes sobre el profesor. ”*/
 
+// Función utilizando repeat
+function repeatString (a,b) { // donde a es el string y b el número de veces que queremos que se repita
+    console.log(a.repeat(b));
+}
+
+repeatString("No haré memes del profesor.", 3);
+
+// Función con bucle for
+const repeatStringV2 = (string, n) => {
+    let repeatedString = "";
+    for (let i = 0; i < n; i++) {
+        repeatedString += string;
+    }
+    return repeatedString;
+}
+repeatStringV2("No haré nada.", 2);
 
 console.log("****************Ejercicio 19****************");
 //19. Crea una función que recibe un objeto con dos campos, votos positivos y votos negativos y que devuelva 
 //la cuenta final.
 
 /*getVoteCount({upVotes: 35, downVotes: 15}); // 20*/
+
+//Función anónima
+const getVoteCount = function (obj) {
+    /*Must receive an object with the fields: upVotes, downVotes*/
+    return obj.upVotes - obj.downVotes;
+}
+
+const votes = {upVotes: 35, downVotes: 15};
+console.log(getVoteCount(votes));
+console.log(getVoteCount({upVotes: 35, downVotes: 15}));
 
 
 console.log("****************Ejercicio 20****************");
@@ -324,26 +350,84 @@ console.log("****************Ejercicio 20****************");
 /*getTypes(["I'm learning JS in a Bootcamp 🚀", 7.5, {}, 0, undefined, [], "codespace"]);
   output ["string", "number", "object", "number", "undefined", "object", "string"];*/
 
+function typeOfArray(array) {
+    const arrayTypes = [];
+    
+    array.forEach(element => {
+        arrayTypes.push(typeof element);
+    });
+
+    return arrayTypes;
+}
+
+const testArray = ["I'm learning JS in a Bootcamp 🚀", 7.5, {}, 0, undefined, [], "codespace"];
+console.log(typeOfArray(testArray));
 
 console.log("****************Ejercicio 21****************");
 //21. Función que dado un array de números con formato string devuelva un array con los números ya 
 //parseados.
 /*getParsedNumbers(["1.5", "10", "0"]); // output: [1.5, 10, 0];*/
 
+function getParsedNumbers(array) {
+    const parsedArray = [];
+    
+    array.forEach(element => {
+        parsedArray.push(Number(element)); // con number da igual que sea decimal o lo que sea
+    });
+
+    return parsedArray;
+}
+
+console.log(getParsedNumbers(["1.5", "10", "0"]));
 
 console.log("****************Ejercicio 22****************");
 //22. Crea una función de flecha que devuelva “Positivo” si el número que recibe por argumento es mayor o 
 //igual que cero y “Negativo” en caso contrario. Usa el operador ternario.
 
+const isPositive = num => num>= 0 ? "Positive" : "Negative";
+console.log(isPositive(-5));
+console.log(isPositive(5));
+console.log(isPositive(0));
+
 console.log("****************Ejercicio 23****************");
 //23. Crea una función que dado un array cualquiera y un índice, borre el elemento guardado en ese índice.
 
+//Función de flecha
+const removeItem = (array, index) => array.splice(index, 1);
 
 console.log("****************Ejercicio 24****************");
 //24. Usando la función del apartado anterior, crea otra función que dado un array de números y un número a 
 //filtrar, devuelva un array borrando todos las apariciones de dicho número.
 /*filterNumber([1, 5, 6, 7, 5], 5); // output: [1, 6, 7]*/
 
+//const removeItem = (array, index) => array.splice(index, 1);
+
+// El problema aquí, es que si se encuentra dos veces el mismo número seguido, uno lo pone
+const filterItem = (array, numberToFilter) => {
+    
+    array.forEach((element, index) => {
+        
+        if(element === numberToFilter) {
+            removeItem(array, index);
+        }
+    });
+}
+
+const arrayFiltered = [1, 5, 5, 6, 7, 5]; // el output sería [ 1, 5, 6, 7 ]
+filterItem(arrayFiltered, 5);
+console.log(arrayFiltered);
+
+//Con la función for, dos opciones, las dos validas
+function filterNumberV2(array,num) {
+    for (let i = array.length -1; i>= 0; i--){
+        if (array[i] === num) {
+            removeItem(array, i);
+        }
+    }
+    return array;
+} 
+
+console.log(filterNumberV2([4, 5, 5, 5, 5, 5, 6], 5));
 
 console.log("****************Ejercicio 25****************");
 //25. Crea dos funciones que recibirán un objeto, la primera devolverá un array con los nombres de todas sus 
