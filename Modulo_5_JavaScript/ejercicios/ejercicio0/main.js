@@ -434,16 +434,71 @@ console.log("****************Ejercicio 25****************");
 //propiedades. La segunda devolverá un array con los valores de dichas propiedades.
 //Investigar los métodos keys y values del prototipo de Object.
 
+function propiedadesArray(object){
+    return Object.keys(object);
+}
+
+let clase = {
+    profesor: "cristian",
+    alumno: "maria",
+    alumno2: "elvira",
+}
+
+console.log(propiedadesArray(clase));
+
+const valoresArray = (object) => Object.values(object);
+
+console.log(valoresArray(clase));
+
 console.log("****************Ejercicio 26****************");
 //26. Crea una función que invierta un string.
 /*stringReverse(".nóicamargorp ed sedrat sal ne éfac led érasuba oN");
 // output: No abusaré del café en las tardes de programación.*/
 
+function stringReverse (string) {
+    reversedString = "";
+    for (let i = string.length -1; i >= 0; i--){
+        reversedString += string.charAt(i);
+    }
+    return reversedString;
+}
+
+console.log(stringReverse(".nóicamargorp ed sedrat sal ne éfac led érasuba oN"));
+
+// Con la funcion reverse y join, la recomendada
+function stringInvertido(texto) {
+    return texto.split('').reverse().join('');
+}
+
+console.log(stringInvertido('.nóicamargorp ed sedrat sal ne éfac led érasuba oN'));
+
+// Con la funcion for
+
+const stringReverseV2 = string => {
+    let reversed = '';
+    for (let character of string) {
+        reversed = character.concat(reversed);
+    }
+    return reversed;
+}
+
+console.log(stringReverseV2('.nóicamargorp ed sedrat sal ne éfac led érasuba oN'));
 
 console.log("****************Ejercicio 27****************");
 //27. Crea una función que compare strings sin tener en cuenta las mayúsculas / minúsculas.
 /*compareStrings("Darth CODER", "darth coder"); // output: true*/
 
+function compareString(a,b) {
+    if (a.toLocaleLowerCase() == b.toLocaleLowerCase() && a.toUpperCase() == b.toUpperCase()){
+        return true;
+    }else {
+        return false;
+    }
+    // return a.toUpperCase() == b.toUpperCase();
+}
+
+console.log(compareString("Darth CODER", "darth coder"));
+console.log(compareString("Darth CODER", "coder"));
 
 console.log("****************Ejercicio 28****************");
 //28. Crea una función que convierta en mayúscula sólo la primera letra de cada palabra de un string dado. El 
@@ -451,5 +506,58 @@ console.log("****************Ejercicio 28****************");
 /*capitalize("comprobaré los errores de la consola antes de pedir ayuda.");
 // output: "Comprobaré Los Errores De La Consola Antes De Pedir Ayuda."*/
 
+function capitalize (str) {
+    let words = str.split(" ");
+    // console.log(words);
+
+    for (i = 0 ; i < words.length ; i++) {
+        
+        let letters = words[i].split("");
+
+        // console.log(letters);
+
+        letters[0] = letters[0].toUpperCase();
+
+        // console.log(letters.join(""));
+
+        words[i] = letters.join("");
+
+        //console.log(words.join(" "));
+    }
+    return words.join(" ");
+}
+
+console.log(capitalize("comprobaré los errores de la consola antes de pedir ayuda."));
+
+// Con un semafaro en la función, que además te pone en minúscula el resto de la palabra
+
+function capitalizeV2(string) {
+    let upperCheck = true;
+    let capitalizedString = '';
+
+    for (const character of string) {
+        
+        if (upperCheck) {
+            capitalizedString = capitalizedString.concat('', character.toUpperCase());
+        } else {
+            capitalizedString = capitalizedString.concat('', character.toLowerCase());
+        };
+
+        character === ' ' ? upperCheck = true : upperCheck = false;
+    }
+
+    return capitalizedString;
+}
+
+console.log(capitalizeV2("comprobaré los errores de la consola antes de pedir ayuda"));
+
+let pruebaApt28 = 'Esto ES oTRa PruebA pARA COMPROBAR sI FuncIoNa CoRRECtamENte'
+console.log(capitalizeV2(pruebaApt28));
+
 console.log("****************Ejercicio 29****************");
 //29. Crea una función en una única línea que reciba un valor lógico y devuelva el opuesto.
+
+const negate = (logical) => !logical;
+
+console.log(negate(true));
+console.log(negate(false));

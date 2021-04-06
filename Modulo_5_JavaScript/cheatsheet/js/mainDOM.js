@@ -79,6 +79,7 @@ parent1.classList.remove("bg-dark"); // elimina una clase .remove(bg-dark)
 console.log("Classlist: ", parent1.classList);
 parent1.classList.add("bg-red"); // añade una clase .add(bg-red)
 console.log("Classlist: ", parent1.classList);
+// parent1.className += " bg-dark"; // puede modificar todo lo anterior? mejor no utilizar
 
 //parent1.classList.toggle("bg-red");// .toggle: si lo tiene lo añade, y si lo tiene lo quita
 parent1.addEventListener("click", (e) => e.target.classList.toggle("bg-red"));
