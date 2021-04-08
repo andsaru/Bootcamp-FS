@@ -127,4 +127,82 @@ newTabButton.addEventListener("click", () => link.target = "_blank");
 const ap9Paragraph = document.querySelector("#colorsParagraph");
 document.querySelector("#colorsSelect").addEventListener("change", e => {
     ap9Paragraph.style.color = e.target.value;
+    console.log(e.target.value);
 });
+
+// 10. Incluir un botón que al pulsarlo genere un número aleatorio y mantenga en una lista 
+// actualiza el número de elementos que se han generado, los que son pares y los que son impares.
+
+const currentRandom= document.getElementById("currentRandom");
+const totalNumbers= document.getElementById("totalNumbers");
+const oddNumbers= document.getElementById("oddNumbers");
+const evenNumbers= document.getElementById("evenNumbers");
+
+document.getElementById("randomButton").onclick = () => {
+    //console.log(2); // comprobamos que funciona
+    const randomNumber = Math.floor(Math.random() * 100) //alternativa: parseInt(Math.random() * 100);
+    currentRandom.textContent = randomNumber;
+
+    totalNumbers.textContent++; // alternativa: totalNumbers.textContent = Number(totalNumbers.textContent) + 1;
+    randomNumber % 2 === 0 ? evenNumbers.textContent++ : oddNumbers.textContent++; //genera si el num es par o impar
+};
+
+// 11. Construir una lista que tenga números. Añadir un input donde poder añadir números y un botón. Al pulsar 
+// el botón, si el número ya existe en la lista, mostrar un mensaje de error, si no existe, lo añadirá al 
+// principio.
+
+const ulApt11 = document.getElementById("ulApt11");
+const inputApt11 = document.getElementById("inputApt11");
+const buttonApt11 = document.getElementById("buttonApt11");
+let numbersList = [1, 15, 20, 35, 78];
+
+function fillList () {
+    /* Vacia la lista y la relena de nuevo elemento a elemento*/
+    ulApt11.innerHTML = "";
+    for (let number of numbersList) { // for (let index = 0; index < numbersList.length; index++)
+        newLi = document.createElement("li");
+        newLi.textContent = number; // `${numbersList[index]}`;
+        ulApt11.appendChild(newLi);
+    }
+}
+
+function addToList () {
+    /* Parsea el input, comprueba si existe y lo añade */
+    let numberToJoin = Number(inputApt11.value);
+    if(numbersList.indexOf(numberToJoin) === -1) {
+        numbersList.push(numberToJoin);
+        fillList();
+    } else {
+        window.alert('ooops! El número ya está en la lista');
+    }
+}
+
+fillList(); // Aqui llamamos al array creado al principio
+buttonApt11.addEventListener('click', addToList);
+
+// 12. Crearemos una clase .btn en CSS que le de ciertos estilos a un botón. Al hacer click en el botón haremos 
+// “toggle” o alternaremos esa clase, es decir, si está presente la quitaremos y si no está, la añadiremos.
+
+document.querySelector("#toggler").onclick = (e) => e.target.classList.toggle("btn");
+
+// Apartado extra: Refactorizar código
+
+//Solución 1
+//const buttons = document.getElementsByClassName("btn-red"); // Devuelve HTMLCollection
+// Array.from(buttons).forEach(button => {
+    
+//     button.addEventListener("click", function (e) {
+//         e.target.style.backgroundColor = "red";
+//     });
+// });
+
+//Solución 2
+let buttons = document.getElementsByClassName("btn-red");
+buttons = document.querySelectorAll(".btn-red"); // devuelve NodeList que tiene disponible forEach
+buttons.forEach(button => {
+
+    button.addEventListener("click", function (e) {
+        e.target.style.backgroundColor = "red";
+    });
+});
+
