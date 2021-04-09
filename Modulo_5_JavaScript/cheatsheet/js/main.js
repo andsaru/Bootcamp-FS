@@ -205,6 +205,7 @@ console.log(car2.weight);
 
 console.log(car3.getDescription());
 
+console.log(car1 instanceof Car);
 
 
 
@@ -460,6 +461,126 @@ console.log(numbersArray);
 
 let squareV2 = number => number * number;
 console.log(squareV2(5));
+
+// ------- Higher Order Functions------
+console.clear();
+// ---Map
+//Función normal
+let arr1 = [1, 2, 3];
+let arr2 = [];
+
+for (let num of arr1) {
+    arr2.push(num * 2);
+}
+
+console.log(arr1, arr2);
+
+// Función con map
+
+arr1 = [1, 2, 3];
+
+// 1 forma
+arr2 = arr1.map(myFunction);
+
+function myFunction(num) {
+    return num * 2;
+}
+
+//2 forma
+arr2 = arr1.map(function (num){
+    return num * 2;
+});
+
+// 3 forma, flecha
+arr2 = arr1.map(num => num * 2);
+arr2 = arr1.map (num => num % 2 === 0 ? num : num + 1);// convierte todos a par
+
+console.log("Resultado con map: ", arr1, arr2);
+
+// A partir de un array con años de nacimiento, calcular edades
+const birthYears = [1980, 1990, 1975, 1970];
+const ages = birthYears.map(year => 2021 - year);
+
+console.log(ages);
+
+// ---Filter
+// función normal
+const prices = [150, 50, 49, 51, 15, 237];
+const expensives = [];
+
+for(let price of prices) {
+    if (price >= 50) {
+        expensives.push(price);
+    }
+}
+
+console.log(expensives);
+
+
+// usando filter
+const prices = [150, 50, 49, 51, 15, 237];
+const expensives = prices.filter(price => price >= 50);
+console.log(expensives);
+
+// Ejemplo
+const cars = [
+    {
+        brand:"BMW",
+        year: 2001,
+        plateNumber: "HGJ4588",
+        address: {
+            street: "lo que sea",
+            city: "wonderland"
+        }
+    },
+    {
+        brand:"Mercedes",
+        year: 1990,
+        plateNumber: "BXC1234",
+        address: {
+            street: "lo que sea",
+            city: "wonderland"
+        }
+    },
+    {
+        brand:"Volvo",
+        year: 2021,
+        plateNumber: "LKJ1293",
+        address: {
+            street: "lo que sea",
+            city: "asasd"
+        }
+    },
+];
+
+console.log(cars.filter(car => car.year> 2008));
+console.log(cars.filter(car => car.plateNumber === "LKJ1293"));
+console.log(cars.filter(car => car.plateNumber.includes("L")));
+console.log(cars.filter(car => car.address.city === "wonderland" && car.year > 2000));
+
+// cars = ["BMW", "Mercedes", "Volvo"] generar este array de marcas
+console.log(cars.map(car => car.brand));
+console.log(cars.map(car => car.address.street));
+
+// ---Sort
+//Ejemplo con Sort utilizando el array de coches, ordena el array por año
+console.log(cars);
+
+cars.sort((car1, car2) => car1.year - car2.year);
+
+console.log(cars);
+
+// --- Reduce
+
+const arrr = [10, 7, 13, 20];
+
+console.log(arrr.reduce((sum, currentNumber) => sum + currentNumber, 1000)); // si queremos que empiece en 1000lo ponemos asi
+
+
+
+
+
+
 
 //-------------------------- For ------------------------------
 for (let i = 0; i <= 10; i++) {
