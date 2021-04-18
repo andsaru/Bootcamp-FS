@@ -18,7 +18,8 @@ function fillList(array) {
     });
 }
 
-// Ejercicio 2 con el api de post hay que construir un H1 para el título y un p para el body
+// Haremos una paginación en nuestro array, de forma que se muestren sólo 20 
+// artículos en el DOM con un h1 para title y un p para el body. 
 
     function fillContent(array) {
     array.slice(0,20).forEach(element => {
@@ -58,5 +59,6 @@ fetch(URL)
 
 fetch(URL2).then(r => r.json()).then(data => fillContent(data));
 
-//como paginar un array
-// 
+// Al mostrarse sólo 20 artículos, tendremos que “crear” tantas páginas como sea 
+// necesario para poder mostrar el número total de posts en diferentes páginas. 
+
