@@ -11,7 +11,12 @@ export default function Counter() {
 
     const handleClick = function (evento) {
         if (count < 10) {
-            setCount(count + 1);
+            // setCount(count + 1);
+            // setCount(count + 1); // Actualiza con el mismo valor
+            // Actualiza de 3 en 3, cuantas más lineas añadamos de 4 en 4...y así
+            setCount(currentCount => currentCount + 1);
+            setCount(currentCount => currentCount + 1);
+            setCount(currentCount => currentCount + 1);
         }   
     };    
 
