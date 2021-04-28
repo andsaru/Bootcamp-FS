@@ -1,0 +1,4 @@
+nav .active, nav .active:hover, nav a.active:active, nav .active:visited {
+  color: green !important;
+}
+
