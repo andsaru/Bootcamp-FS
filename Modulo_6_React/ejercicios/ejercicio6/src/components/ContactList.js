@@ -1,17 +1,14 @@
-export default function ContactList({ contacts, setContacts }) {
+import {useContext} from "react";
+import {GlobalContext} from "../App";
+
+export default function ContactList() {
+
+    // llamo a contacts y setcontacts del contexto
+    const {contacts, setContacts} = useContext(GlobalContext);
 
     const removeContact = phoneNumber => {
-        // para cada contacto quiero quitar solo aquel que tenga un phonenumber que sea diferente de phonenumber
         return e => setContacts(contacts.filter(contact => contact.phoneNumber !== phoneNumber))
     }
-
-
-    // -- Otra forma de hacer la función Eliminar contacto --
-    // function removeContact(phoneNumber) {
-    //     setContacts(contacts.filter((c, i) => i !== phoneNumber))
-    // };
-    // // Luego el evento onClick en el boton Eliminar sería
-    // // onClick={()=>removeContact(phoneNumber)}
 
     return (
         <div className="row">

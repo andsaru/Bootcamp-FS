@@ -11,7 +11,8 @@ function App() {
 
       <BrowserRouter>
       <nav className="navbar px-5 py-3 bg-dark">
-        <NavLink to="/" className="text-decoration-none text-light font-weight-bold" activeClassName="active">Ejercicio 1</NavLink>
+        {/* Se le eñade el exact al primero (ejercicio 1) para que se deseleccione el primero y cambie con los demás */}
+        <NavLink to="/" className="text-decoration-none text-light font-weight-bold" activeClassName="active" exact>Ejercicio 1</NavLink>
         <NavLink to="/ejercicio2" className="text-decoration-none text-light font-weight-bold" activeClassName="active">Ejercicio 2</NavLink>
         <NavLink to="/ejercicio3" className="text-decoration-none text-light font-weight-bold" activeClassName="active">Ejercicio 3</NavLink>
         <NavLink to="/ejercicio4" className="text-decoration-none text-light font-weight-bold" activeClassName="active">Ejercicio 4</NavLink>
