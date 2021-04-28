@@ -1,9 +1,16 @@
 import './App.css';
 import Counter from './components/Counter';
 import FirstComponent, {SecondComponent, ThirdComponent} from './components/FirstComponent';
-import UseEffectsComponent from './components/UseEffectsComponent';
 
-import { useState } from "react";
+import UseEffectsComponent from './components/UseEffectsComponent';
+import UseContextComponent from './components/UseContextComponent';
+
+import { useState, createContext } from "react";
+import Router from "./Router";
+
+// Para useContext, lo creamos fuera y también tenemos que importarlo
+export const GlobalContext = createContext();
+
 
 function App() {
   // Si lo pongo a true aparecera el botón Show en false no
@@ -23,6 +30,12 @@ function App() {
       <FirstComponent title="otro tulo enviado desde el padre"/>
       <SecondComponent />
       <ThirdComponent /> */}
+
+      <GlobalContext.Provider value="Soy un string guardado en un contexto; useContext.">
+        <UseContextComponent />
+      </GlobalContext.Provider>
+      
+      <Router />
     </div>
   );
 }
