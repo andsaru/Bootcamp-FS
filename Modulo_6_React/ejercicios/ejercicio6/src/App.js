@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { useFetch } from "./hooks/useFetch";
 import { BrowserRouter, Switch, Route, NavLink } from "react-router-dom";
 import './App.css';
 import Ejercicio1 from "./pages/Ejercicio1"
@@ -19,6 +20,15 @@ function App() {
 
   const [contacts, setContacts] = useState(initialContactsState);
 
+  // Subimos el estado del ejercicio 4
+  const [todos, setTodos] = useState([]);
+
+  const API_TODOS = "https://raw.githubusercontent.com/BC-FSWD/todo-list/master/todo-list.json";
+
+  // El 20 es el limit que le he pasado en su función en la carpeta hooks
+  useFetch(API_TODOS, setTodos, 20);
+  // Y aquí el useFetch de la carpeta Hook
+
   return (
     <div className="App">
 
@@ -30,7 +40,7 @@ function App() {
         <NavLink to="/ejercicio4" className="text-decoration-none text-light font-weight-bold" activeClassName="active">Ejercicio 4</NavLink>
       </nav>
 
-      <GlobalContext.Provider value={{contacts, setContacts}}>
+      <GlobalContext.Provider value={{contacts, setContacts, todos, setTodos}}>
         <Switch >
           <Route exact path="/" component={Ejercicio1}/>
           <Route path="/ejercicio2" component={Ejercicio2}/>

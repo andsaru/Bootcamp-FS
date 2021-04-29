@@ -1,7 +1,13 @@
-import {useState} from "react";
+import { useState, useContext } from "react";
+import { GlobalContext } from "../App";
 
-export default function NewTodo({ setTodos }) {
+export default function NewTodo() {
 
+    // primero importamos usecontext y el contexto de mi app (arriba)
+    // luego obtenemos del contexto el setTodos y los props van fuera
+    const { setTodos } = useContext(GlobalContext);
+
+    // useState("") se enlaza con el input
     const [newTodo, setNewTodo] = useState("");
 
     function handleSubmit(e) {

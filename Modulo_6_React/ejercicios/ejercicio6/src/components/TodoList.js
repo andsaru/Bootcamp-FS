@@ -1,18 +1,20 @@
 import "./TodoList.css";
+import { useContext } from "react";
+import { GlobalContext } from "../App";
 
-export default function TodoList({ todos, setTodos }) {
+export default function TodoList() {
+
+    // primero importamos usecontext y el contexto de mi app (arriba)
+    // luego obtenemos del contexto el todos y el setTodos y los props van fuera
+    const { todos, setTodos } = useContext(GlobalContext);
 
     const removeTodo = (title) => setTodos(todos.filter(todo => todo.title !== title));
     
     const toggleCompleted = (e, index) => {
         // Si es el botón, elimina la línea, sino, hace el toogle
         if (e.target.tagName !== "BUTTON") {
-            // hago una copia del estado original, que no puedo cambiar directamente
             const newTodos = [...todos];
-            // Accedo al "tudu" del index que me están pasando por debajo, (ahí la utilidad de pasar
-            // el índice en el onClick), e invierto su popiedad 
-            newTodos[index].completed = !newTodos[index].completed;
-            // Para modificar mis "tudus" existentes, le paso un array nuevo entero
+            newTodos[index].completed = !newTodos[index].completed;  
             setTodos(newTodos);
             
             // -- Con map podría hacerse así -- 
