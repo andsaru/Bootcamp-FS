@@ -15,7 +15,7 @@ let userSchema = new Schema({
     },
     email: {
         type: String,
-        unique: true,
+        unique: true, 
         required: [true, "Email is required"]
     },
     password: {
@@ -33,6 +33,18 @@ let userSchema = new Schema({
         default: true
     }
 });
+
+userSchema.methods.toJSON = function() {
+    const user = this;
+
+    const userObject = user.toObject();
+
+    delete userObject.password;
+    delete userObject.__v;
+    // delete userObject.role;
+
+    return userObject;
+}
 
 userSchema.plugin(uniqueValidator,{message: "{PATH} should be unique"});
 

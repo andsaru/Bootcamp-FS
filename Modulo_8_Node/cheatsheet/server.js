@@ -9,10 +9,13 @@ const users = require("./routes/users");
 // si tuvieramos una carpeta products
 // const products = require("./routes/products");
 
+const login = require("./routes/login");
+
 // Antes de los endpoints, usamos lo middlewares
 app.use(express.json());
 
 app.use("/users", users);
+app.use("/login", login);
 
 // Conectamos a mongo
 mongoose.connect("mongodb://localhost:27017/users", {
