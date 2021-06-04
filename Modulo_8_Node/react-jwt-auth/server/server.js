@@ -3,7 +3,9 @@ require("./config/config");
 
 const mongoose = require("mongoose");
 const express = require("express");
+const cors = require("cors");
 const app = express();
+
 
 // Borramos esta parte porque en index.js lo hemos añadido
 // const users = require("./routes/users");
@@ -14,6 +16,8 @@ const app = express();
 
 // Antes de los endpoints, usamos lo middlewares
 app.use(express.json());
+
+app.use(cors());
 
 //app.use("/users", users);
 //app.use("/login", login);
